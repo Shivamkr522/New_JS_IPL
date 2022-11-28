@@ -70,7 +70,7 @@ function findBowlersEconomy(BowlerRuns,BowlerBalls){
         findEachBowlerEconomy.set(key,economy*6);
     }
     findEachBowlerEconomy = new Map([...findEachBowlerEconomy.entries()].sort((a, b) => a[1] - b[1]));
-    // console.log(findEachBowlerEconomy);
+    
     var topTenBowlers = new Map();
     let count = 0;
     for (let key of findEachBowlerEconomy.keys()) {
