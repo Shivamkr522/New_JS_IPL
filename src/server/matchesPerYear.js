@@ -18,12 +18,12 @@ let findMatchesPlayerPerYear = new Map();
 function matchesPerYear(matches) {
 
     for (var index = 0; index < matches.length; index++) {
-        let value = 1;
+        let storeValue = 1;
         if (findMatchesPlayerPerYear.has(matches[index].season)) {
-            value = findMatchesPlayerPerYear.get(matches[index].season) + 1;
-            findMatchesPlayerPerYear.set(matches[index].season, value);
+            storeValue = findMatchesPlayerPerYear.get(matches[index].season) + 1;
+            findMatchesPlayerPerYear.set(matches[index].season, storeValue);
         }
-        else findMatchesPlayerPerYear.set(matches[index].season, value);
+        else findMatchesPlayerPerYear.set(matches[index].season, storeValue);
     }
 
     var data = JSON.stringify(Object.fromEntries(findMatchesPlayerPerYear));

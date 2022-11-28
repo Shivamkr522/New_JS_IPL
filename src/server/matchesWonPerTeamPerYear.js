@@ -23,13 +23,13 @@ function findNumberOfMatchesWinPerYear(results) {
     for (var j = 0; j < season.length; j++) {
         var teamMatchesWon = new Map();
         for (var i = 0; i < results.length; i++) {
-            let value = 1;
+            let storeValue = 1;
             if (season[j] === results[i].season) {
                 if (teamMatchesWon.has(results[i].winner)) {
-                    value = teamMatchesWon.get(results[i].winner) + 1;
-                    teamMatchesWon.set(results[i].winner, value);
+                    storeValue = teamMatchesWon.get(results[i].winner) + 1;
+                    teamMatchesWon.set(results[i].winner, storeValue);
                 }
-                else teamMatchesWon.set(results[i].winner, value);
+                else teamMatchesWon.set(results[i].winner, storeValue);
             }
         }
         let ref = season[j];
